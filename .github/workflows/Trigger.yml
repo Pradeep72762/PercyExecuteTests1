@@ -1,0 +1,16 @@
+name: Workflow Trigger in Repo PercyAutomation1
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Trigger Tests
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.TOKEN }}
+        repository: PercyAutomation1
+        event-type: create-pr
+        client-payload: '{"branch": "${{ github.head_ref }}", "sha": "${{ github.event.pull_request.head.sha }}" }'
