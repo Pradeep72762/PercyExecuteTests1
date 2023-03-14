@@ -12,5 +12,5 @@ jobs:
       with:
         token: ${{ secrets.TOKEN }}
         repository: Pradeep72762/PercyAutomation1
-        event-type: create-pr
+        event-type: create-pr-RunCyPercyTests_IN
         client-payload: '{"branch": "${{ github.head_ref }}", "sha": "${{ github.event.pull_request.head.sha }}" }'
