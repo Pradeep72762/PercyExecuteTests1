@@ -1,7 +1,7 @@
 name: Workflow Trigger in Repo PercyAutomation1
 on:
   pull_request:
-    types: [opened]
+    types: [closed]
 
 jobs:
   trigger:
